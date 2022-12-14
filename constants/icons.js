@@ -66,7 +66,8 @@ const rightArrow = require('../assets/icons/right-arrow.png');
 const plus = require('../assets/icons/plus.png');
 const point = require('../assets/icons/focus.png');
 const card = require('../assets/icons/credit-card.png');
-
+const clock = require('../assets/icons/clock.png');
+const page = require('../assets/icons/page.png');
 export default {
   bookmark,
   home,
@@ -79,4 +80,6 @@ export default {
   claim,
   point,
   card,
+  clock,
+  page,
 };

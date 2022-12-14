@@ -75,4 +75,19 @@ export const myBooksData = [
     completion: '20%',
     lastRead: '1d 5h',
   },
+  {
+    ...HowInnovationWorks,
+    completion: '0%',
+    lastRead: '0',
+  },
+];
+
+export const categoriesData = [
+  {
+    id: 1,
+    categoryName: 'Best Seller',
+    books: [zeroToOne, ThePsychologyOfMoney, companyOfONe],
+  },
+  {id: 2, categoryName: 'The Latest', books: [companyOfONe]},
+  {id: 3, categoryName: 'Coming Soon', books: [HowInnovationWorks]},
 ];

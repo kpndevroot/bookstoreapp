@@ -185,38 +185,68 @@ export const renderButtonSection = () => {
     </View>
   );
 };
-export const renderBookSection = myBooks => {
-  const [myBook, setMyBook] = useState(myBooks);
+
+export const renderMyBookSection = myBooks => {
   const renderItem = ({item, index}) => {
-    <TouchableOpacity
-      style={{
-        flex: 1,
-        marginLeft: index == 0 ? SIZES.padding : 0,
-        marginRight: SIZES.radius,
-        borderColor: COLORS.lightBlue,
-      }}
-      onPress={() => console.log('My Book')}>
-      {/* bookCover */}
-      {/* <Image
-        source={item?.booksCover}
-        resizeMode="cover"
-        style={{width: 180, height: 250, borderRadius: 20}}
-      /> */}
-      {/* book info */}
-      <Text>{item?.bookName}</Text>
-      <Text style={{color: COLORS.white}}>hi hello</Text>
-    </TouchableOpacity>;
+    return (
+      <TouchableOpacity
+        style={{
+          flex: 1,
+          marginLeft: index == 0 ? SIZES.padding : 0,
+          marginRight: SIZES.radius,
+        }}
+        onPress={() => console.log('My Book')}>
+        {/* book cover */}
+        <Image
+          source={item.booksCover}
+          resizeMode="cover"
+          style={{width: 180, height: 250, borderRadius: 20}}
+        />
+
+        {/* book info */}
+        <View
+          style={{
+            marginTop: SIZES.radius,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
+          <Image
+            source={icons.clock}
+            style={{width: 20, height: 20, tintColor: COLORS.LightGray}}
+          />
+          <Text
+            style={{marginLeft: 5, ...FONTS.body3, color: COLORS.LightGray}}>
+            {item.lastRead}
+          </Text>
+
+          <Image
+            source={icons.page}
+            style={{
+              marginLeft: SIZES.radius,
+              width: 20,
+              height: 20,
+              tintColor: COLORS.LightGray,
+            }}
+          />
+          <Text
+            style={{marginLeft: 5, ...FONTS.body3, color: COLORS.LightGray}}>
+            {item.completion}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
   };
+
   return (
     <View style={{flex: 1}}>
-      {/* header */}
+      {/* Header */}
       <View
         style={{
           paddingHorizontal: SIZES.padding,
           flexDirection: 'row',
           justifyContent: 'space-between',
         }}>
-        <Text style={{...FONTS.h2, color: COLORS.white}}>My Books</Text>
+        <Text style={{...FONTS.h2, color: COLORS.white}}>My Book</Text>
         <TouchableOpacity onPress={() => console.log('see more')}>
           <Text
             style={{
@@ -229,15 +259,11 @@ export const renderBookSection = myBooks => {
           </Text>
         </TouchableOpacity>
       </View>
-      {/* books */}
-      <View
-        style={{
-          flex: 1,
-          marginTop: SIZES.padding,
-          borderColor: COLORS.lightBlue,
-        }}>
+
+      {/* Books */}
+      <View style={{flex: 1, marginTop: SIZES.padding}}>
         <FlatList
-          data={myBook}
+          data={myBooks}
           renderItem={renderItem}
           keyExtractor={item => `${item.id}`}
           horizontal
@@ -247,3 +273,43 @@ export const renderBookSection = myBooks => {
     </View>
   );
 };
+
+export const renderCategoryHeader = () => {
+  const [categories, setCategories] = useState(Data.categoriesData);
+  const [selectedCategory, setSelectedCategory] = useState(1);
+  renderItem = ({item}) => {
+    return (
+      <TouchableOpacity
+        style={{flex: 1, marginRight: SIZES.padding}}
+        onPress={() => setSelectedCategory(item.id)}>
+        {selectedCategory == item.id && (
+          <Text style={{color: COLORS.white, ...FONTS.h3}}>
+            {item.categoryName}
+          </Text>
+        )}
+        {selectedCategory != item.id && (
+          <Text style={{color: COLORS.LightGray, ...FONTS.h3}}>
+            {item.categoryName}
+          </Text>
+        )}
+      </TouchableOpacity>
+    );
+  };
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        paddingLeft: SIZES.padding,
+      }}>
+      <FlatList
+        data={categories}
+        showsHorizontalScrollIndicator={false}
+        renderItem={renderItem}
+        keyExtractor={item => `${item.id}`}
+        horizontal
+      />
+    </View>
+  );
+};
+
