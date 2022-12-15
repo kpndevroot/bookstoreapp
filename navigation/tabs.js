@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import IoIcon from 'react-native-vector-icons/Ionicons';
 import EIcon from 'react-native-vector-icons/Entypo';
 import icons from '../constants/icons';
+import Settings from '../screens/Settings';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +51,7 @@ const Tabs = () => {
             case 'Home':
               return (
                 <Image
-                  source={icons.home}
+                  source={icons.homeOutline}
                   resizeMode="contain"
                   style={{tintColor: tintColor, width: 25, hight: 25}}
                 />
@@ -66,7 +67,15 @@ const Tabs = () => {
             case 'Notification':
               return (
                 <Image
-                  source={icons.bookmarkFilled}
+                  source={icons.notification}
+                  resizeMode="contain"
+                  style={{tintColor: tintColor, width: 25, hight: 25}}
+                />
+              );
+            case 'Settings':
+              return (
+                <Image
+                  source={icons.settings}
                   resizeMode="contain"
                   style={{tintColor: tintColor, width: 25, hight: 25}}
                 />
@@ -77,7 +86,7 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Home} />
       <Tab.Screen name="Notification" component={Notifications} />
-      <Tab.Screen name="Settings" component={Home} />
+      <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
 };

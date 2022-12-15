@@ -1,7 +1,7 @@
 import images from './images';
 
 export const profileData = {
-  name: 'root',
+  name: 'Vishnu V',
   point: 200,
 };
 

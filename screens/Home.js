@@ -91,10 +91,15 @@ const Home = ({navigation}) => {
                       padding: SIZES.base,
                       marginRight: SIZES.base,
                       backgroundColor: COLORS.darkGreen,
-                      height: 40,
+                      height: 38,
                       borderRadius: SIZES.radius,
                     }}>
-                    <Text style={{...FONTS.body3, color: COLORS.lightGreen}}>
+                    <Text
+                      style={{
+                        ...FONTS.body4,
+                        color: COLORS.lightGreen,
+                        textAlign: 'center',
+                      }}>
                       Adventure
                     </Text>
                   </View>
@@ -107,10 +112,15 @@ const Home = ({navigation}) => {
                       padding: SIZES.base,
                       marginRight: SIZES.base,
                       backgroundColor: COLORS.darkGreen,
-                      height: 40,
+                      height: 38,
                       borderRadius: SIZES.radius,
                     }}>
-                    <Text style={{...FONTS.body3, color: COLORS.lightGreen}}>
+                    <Text
+                      style={{
+                        ...FONTS.body4,
+                        color: COLORS.lightGreen,
+                        textAlign: 'center',
+                      }}>
                       Business
                     </Text>
                   </View>
@@ -123,10 +133,15 @@ const Home = ({navigation}) => {
                       padding: SIZES.base,
                       marginRight: SIZES.base,
                       backgroundColor: COLORS.darkGreen,
-                      height: 40,
+                      height: 38,
                       borderRadius: SIZES.radius,
                     }}>
-                    <Text style={{...FONTS.body3, color: COLORS.lightRed}}>
+                    <Text
+                      style={{
+                        ...FONTS.body4,
+                        color: COLORS.lightRed,
+                        textAlign: 'center',
+                      }}>
                       Politics
                     </Text>
                   </View>

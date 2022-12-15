@@ -59,6 +59,7 @@ const bookmark = require('../assets/icons/bookmark.png');
 const bookmarkFilled = require('../assets/icons/bookmark-filled.png');
 const claim = require('../assets/icons/rupee.png');
 const home = require('../assets/icons/home.png');
+const homeOutline = require('../assets/icons/homeOutline.png');
 const search = require('../assets/icons/search.png');
 const settings = require('../assets/icons/settings.png');
 const back = require('../assets/icons/back.png');
@@ -69,9 +70,11 @@ const card = require('../assets/icons/credit-card.png');
 const clock = require('../assets/icons/clock.png');
 const page = require('../assets/icons/page.png');
 const more = require('../assets/icons/more.png');
+const notification = require('../assets/icons/notification.png');
 export default {
   bookmark,
   home,
+  homeOutline,
   search,
   settings,
   back,
@@ -84,4 +87,5 @@ export default {
   clock,
   page,
   more,
+  notification,
 };

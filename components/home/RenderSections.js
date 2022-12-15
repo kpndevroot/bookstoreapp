@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,22 @@ import * as Data from '../../constants/dummyData';
 
 export const renderHeader = () => {
   const [profile, setProfile] = useState(Data.profileData);
-
+  const [greeting, setGreeting] = useState('');
+  const welcomeTypes = ['Good morning', 'Good afternoon', 'Good evening'];
+  // useEffect(() => {
+  //
+  // });
+  const getGreeting = () => {
+    let hour = new Date().getHours();
+    console.log({hour: hour});
+    if (hour < 12) setGreeting(welcomeTypes[0]);
+    else if (hour < 18) setGreeting(welcomeTypes[1]);
+    else setGreeting(welcomeTypes[2]);
+  };
+  useEffect(() => {
+    // Run! Like go get some data from an API.
+    getGreeting();
+  }, []);
   return (
     <View
       style={{
@@ -25,7 +40,7 @@ export const renderHeader = () => {
       {/* greetings */}
       <View style={{flex: 1}}>
         <View style={{marginRight: 2}}>
-          <Text style={{...FONTS.h3, color: COLORS.white}}>Good Morning</Text>
+          <Text style={{...FONTS.h3, color: COLORS.white}}>{greeting}</Text>
           <Text style={{...FONTS.h2, color: COLORS.white}}>{profile.name}</Text>
         </View>
       </View>
@@ -33,7 +48,7 @@ export const renderHeader = () => {
       <TouchableOpacity
         style={{
           backgroundColor: COLORS.primary,
-          height: 40,
+          height: 35,
           paddingLeft: 3,
           paddingRight: SIZES.radius,
           borderRadius: 20,
@@ -48,8 +63,8 @@ export const renderHeader = () => {
           }}>
           <View
             style={{
-              width: 30,
-              height: 30,
+              width: 24,
+              height: 24,
               alignItems: 'center',
               justifyContent: 'center',
               borderRadius: 25,
@@ -58,14 +73,14 @@ export const renderHeader = () => {
             <Image
               source={icons.claim}
               resizeMode="contain"
-              style={{width: 20, height: 20}}
+              style={{width: 16, height: 16}}
             />
           </View>
           <Text
             style={{
               marginLeft: SIZES.base,
               color: COLORS.white,
-              ...FONTS.body3,
+              ...FONTS.body4,
             }}>
             {profile.point}
           </Text>
@@ -92,7 +107,7 @@ export const renderButtonSection = () => {
       <View
         style={{
           flexDirection: 'row',
-          height: 70,
+          height: 65,
           backgroundColor: COLORS.secondary,
           borderRadius: SIZES.radius,
         }}>
@@ -110,7 +125,7 @@ export const renderButtonSection = () => {
             <Image
               source={icons.claim}
               resizeMode="contain"
-              style={{width: 25, height: 25}}
+              style={{width: 24, height: 24}}
             />
             <Text
               style={{
@@ -140,7 +155,7 @@ export const renderButtonSection = () => {
             <Image
               source={icons.point}
               resizeMode="contain"
-              style={{width: 25, height: 25}}
+              style={{width: 24, height: 24}}
             />
             <Text
               style={{
@@ -169,7 +184,7 @@ export const renderButtonSection = () => {
             <Image
               source={icons.card}
               resizeMode="contain"
-              style={{width: 25, height: 25}}
+              style={{width: 24, height: 24}}
             />
             <Text
               style={{
