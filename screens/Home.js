@@ -37,7 +37,12 @@ const Home = ({navigation}) => {
         <View style={{marginVertical: SIZES.base}}>
           <TouchableOpacity
             style={{flex: 1, flexDirection: 'row'}}
-            onPress={() => console.log('category data')}>
+            onPress={() => {
+              navigation.navigate('BookDetail', {
+                book: item,
+              });
+              console.log('category data');
+            }}>
             {/* book cover */}
             <Image
               source={item.booksCover}
@@ -173,7 +178,7 @@ const Home = ({navigation}) => {
       {/*  body section*/}
       <ScrollView style={{marginTop: SIZES.radius}}>
         {/* books section */}
-        <View>{renderMyBookSection(myBooks)}</View>
+        <View>{renderMyBookSection(myBooks, navigation)}</View>
         {/* category section */}
         <View style={{marginTop: SIZES.padding}}>
           <View>{renderCategoryHeader(categories)}</View>

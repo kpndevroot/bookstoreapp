@@ -186,7 +186,7 @@ export const renderButtonSection = () => {
   );
 };
 
-export const renderMyBookSection = myBooks => {
+export const renderMyBookSection = (myBooks, navigation) => {
   const renderItem = ({item, index}) => {
     return (
       <TouchableOpacity
@@ -195,7 +195,12 @@ export const renderMyBookSection = myBooks => {
           marginLeft: index == 0 ? SIZES.padding : 0,
           marginRight: SIZES.radius,
         }}
-        onPress={() => console.log('My Book')}>
+        onPress={() => {
+          console.log('My Book');
+          navigation.navigate('BookDetail', {
+            book: item,
+          });
+        }}>
         {/* book cover */}
         <Image
           source={item.booksCover}
@@ -312,4 +317,3 @@ export const renderCategoryHeader = () => {
     </View>
   );
 };
-
