@@ -6,7 +6,7 @@ export const profileData = {
 };
 
 const zeroToOne = {
-  id: 1,
+  id: 10,
   bookName: 'Zero To One',
   booksCover: images.zeroToOne,
   bookImage: images.zeroToOneCover,
@@ -23,7 +23,7 @@ const zeroToOne = {
 };
 
 const ThePsychologyOfMoney = {
-  id: 1,
+  id: 11,
   bookName: 'The Psychology of Money ',
   booksCover: images.phycologyOfMoney,
   bookImage: images.phychologyofmoneyCover,
@@ -39,7 +39,7 @@ const ThePsychologyOfMoney = {
   navTintColor: '#000',
 };
 const companyOfONe = {
-  id: 1,
+  id: 12,
   bookName: 'Company of One',
   booksCover: images.companyOfOne,
   bookImage: images.companyofoneCover,
@@ -55,7 +55,7 @@ const companyOfONe = {
   backgroundColor: 'rgba(247, 237, 237, 0.34)',
 };
 const HowInnovationWorks = {
-  id: 1,
+  id: 13,
   bookName: 'How Innovation Works',
   booksCover: images.matt_ridley,
   bookImage: images.matt_ridleyCover,

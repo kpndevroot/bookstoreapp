@@ -34,7 +34,7 @@ const Home = ({navigation}) => {
     }
     const renderItem = ({item}) => {
       return (
-        <View style={{marginVertical: SIZES.base}}>
+        <View style={{marginVertical: SIZES.base}} key={item.id}>
           <TouchableOpacity
             style={{flex: 1, flexDirection: 'row'}}
             onPress={() => {
@@ -61,7 +61,7 @@ const Home = ({navigation}) => {
                   }}>
                   {item.bookName}
                 </Text>
-                <Text style={{...FONTS.h3, color: COLORS.lightGray}}>
+                <Text style={{...FONTS.h3, color: COLORS.LightGray}}>
                   {item.author}
                 </Text>
               </View>
