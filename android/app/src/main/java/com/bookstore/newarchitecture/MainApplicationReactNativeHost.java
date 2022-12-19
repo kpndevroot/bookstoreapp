@@ -1,4 +1,4 @@
-package com.bookstore.newarchitecture;
+package com.pusthakam.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.bookstore.BuildConfig;
-import com.bookstore.newarchitecture.components.MainComponentsRegistry;
-import com.bookstore.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.pusthakam.BuildConfig;
+import com.pusthakam.newarchitecture.components.MainComponentsRegistry;
+import com.pusthakam.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
